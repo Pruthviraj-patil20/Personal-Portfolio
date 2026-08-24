@@ -773,7 +773,11 @@ img {
     display: flex;
     gap: 2rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
+}
+
+.education-card:last-child {
+    margin-bottom: 0;
 }
 
 .edu-icon {

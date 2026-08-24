@@ -654,6 +654,384 @@ img {
     color: var(--accent);
 }
 
+/* ==========================================================================
+   EventSphere Premium Themed Background & Animations
+   ========================================================================== */
+.eventsphere-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 55%, #F0F7FF 100%);
+    border: 1px solid rgba(219, 234, 254, 0.9);
+    box-shadow: 0 20px 45px -15px rgba(37, 99, 235, 0.08), 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.eventsphere-card .featured-card-header,
+.eventsphere-card .featured-body {
+    position: relative;
+    z-index: 2;
+}
+
+.eventsphere-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Dynamic Ambient Glow Mesh */
+.es-glow-mesh {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(55px);
+    pointer-events: none;
+    opacity: 0.55;
+    transition: opacity 0.5s ease;
+}
+
+.es-glow-1 {
+    width: 360px;
+    height: 360px;
+    top: -100px;
+    right: -60px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(99, 102, 241, 0.08) 60%, transparent 80%);
+    animation: es-mesh-drift 14s ease-in-out infinite alternate;
+}
+
+.es-glow-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -80px;
+    left: -50px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.16) 0%, rgba(37, 99, 235, 0.07) 60%, transparent 80%);
+    animation: es-mesh-drift 18s ease-in-out infinite alternate-reverse;
+}
+
+.es-glow-3 {
+    width: 240px;
+    height: 240px;
+    top: 40%;
+    left: 42%;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.12) 0%, transparent 70%);
+    animation: es-mesh-pulse 10s ease-in-out infinite;
+}
+
+/* Interactive Cursor Spotlight */
+.es-interactive-light {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.03) 50%, transparent 75%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.eventsphere-card:hover .es-interactive-light {
+    opacity: 1;
+}
+
+/* Stage Spotlight Beams */
+.es-spotlight {
+    position: absolute;
+    top: -20px;
+    width: 140px;
+    height: 260px;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.es-spotlight-left {
+    left: 10%;
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.02) 60%, transparent 100%);
+    transform: rotate(-16deg);
+    transform-origin: top center;
+    animation: es-spotlight-sweep-left 8s ease-in-out infinite alternate;
+}
+
+.es-spotlight-right {
+    right: 14%;
+    background: linear-gradient(215deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.02) 60%, transparent 100%);
+    transform: rotate(16deg);
+    transform-origin: top center;
+    animation: es-spotlight-sweep-right 9s ease-in-out infinite alternate;
+}
+
+/* Waves SVG */
+.es-waves-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+.es-wave-1 {
+    animation: es-wave-glide 12s ease-in-out infinite alternate;
+}
+
+.es-wave-2 {
+    animation: es-wave-dash 24s linear infinite;
+}
+
+.es-wave-3 {
+    animation: es-wave-glide-rev 15s ease-in-out infinite alternate;
+}
+
+/* Floating Abstract Event Elements */
+.es-floating-elements {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.es-parallax-item {
+    position: absolute;
+    will-change: transform;
+    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.4, 1);
+    pointer-events: none;
+}
+
+.es-pos-qr {
+    top: 25px;
+    right: 28px;
+}
+
+.es-pos-ticket {
+    bottom: 25px;
+    right: 35px;
+}
+
+.es-pos-calendar {
+    top: 48%;
+    right: 6%;
+}
+
+.es-pos-pin {
+    bottom: 25px;
+    left: 20px;
+}
+
+.es-pos-soundwave {
+    top: 22px;
+    left: 32%;
+}
+
+.es-item {
+    pointer-events: none;
+    will-change: transform;
+}
+
+.es-item-qr {
+    opacity: 0.7;
+}
+
+.es-item-ticket {
+    opacity: 0.7;
+    transform: rotate(-6deg);
+}
+
+.es-item-calendar {
+    opacity: 0.6;
+    transform: rotate(5deg);
+}
+
+.es-item-pin {
+    opacity: 0.65;
+}
+
+.es-item-soundwave {
+    opacity: 0.55;
+}
+
+/* Floating Keyframe Animations */
+.es-float-1 {
+    animation: es-float-anim-1 7s ease-in-out infinite;
+}
+
+.es-float-2 {
+    animation: es-float-anim-2 9s ease-in-out infinite;
+}
+
+.es-float-3 {
+    animation: es-float-anim-3 8.5s ease-in-out infinite;
+}
+
+.es-float-4 {
+    animation: es-float-anim-4 10s ease-in-out infinite;
+}
+
+/* QR Scanning Line Beam */
+.es-qr-scan-line {
+    animation: es-qr-scan 3.5s ease-in-out infinite;
+}
+
+/* Radar Rings */
+.es-radar-ring.ring-1 {
+    animation: es-radar-pulse 4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    transform-origin: 40px 40px;
+}
+
+.es-radar-ring.ring-2 {
+    animation: es-radar-pulse 4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite 1.5s;
+    transform-origin: 40px 40px;
+}
+
+/* Equalizer Bars */
+.es-eq-bar {
+    animation: es-eq-pulse 1.8s ease-in-out infinite alternate;
+}
+.es-eq-bar.bar-1 { animation-delay: 0.1s; }
+.es-eq-bar.bar-2 { animation-delay: 0.4s; }
+.es-eq-bar.bar-3 { animation-delay: 0.2s; }
+.es-eq-bar.bar-4 { animation-delay: 0.6s; }
+.es-eq-bar.bar-5 { animation-delay: 0.3s; }
+.es-eq-bar.bar-6 { animation-delay: 0.5s; }
+.es-eq-bar.bar-7 { animation-delay: 0.25s; }
+
+/* Micro-Sparkles */
+.es-sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #60A5FA;
+    box-shadow: 0 0 8px 2px rgba(96, 165, 250, 0.5);
+    animation: es-sparkle-twinkle 4s ease-in-out infinite;
+}
+
+.es-sp-1 { top: 22%; left: 16%; animation-delay: 0.2s; }
+.es-sp-2 { top: 78%; left: 38%; animation-delay: 1.4s; }
+.es-sp-3 { top: 32%; right: 28%; animation-delay: 2.1s; }
+.es-sp-4 { top: 88%; right: 18%; animation-delay: 0.8s; }
+.es-sp-5 { top: 12%; right: 42%; animation-delay: 2.7s; }
+
+/* Keyframes */
+@keyframes es-mesh-drift {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-20px, 16px) scale(1.08); }
+}
+
+@keyframes es-mesh-pulse {
+    0%, 100% { transform: scale(0.95); opacity: 0.3; }
+    50% { transform: scale(1.12); opacity: 0.55; }
+}
+
+@keyframes es-spotlight-sweep-left {
+    0% { transform: rotate(-20deg) scaleY(0.9); }
+    100% { transform: rotate(-10deg) scaleY(1.08); }
+}
+
+@keyframes es-spotlight-sweep-right {
+    0% { transform: rotate(20deg) scaleY(0.9); }
+    100% { transform: rotate(10deg) scaleY(1.08); }
+}
+
+@keyframes es-wave-glide {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-7px); }
+}
+
+@keyframes es-wave-glide-rev {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(8px); }
+}
+
+@keyframes es-wave-dash {
+    to { stroke-dashoffset: -100; }
+}
+
+@keyframes es-float-anim-1 {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes es-float-anim-2 {
+    0%, 100% { transform: translateY(0px) rotate(-6deg); }
+    50% { transform: translateY(-10px) rotate(-3deg); }
+}
+
+@keyframes es-float-anim-3 {
+    0%, 100% { transform: translateY(0px) rotate(5deg); }
+    50% { transform: translateY(-7px) rotate(8deg); }
+}
+
+@keyframes es-float-anim-4 {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-5px) scale(1.04); }
+}
+
+@keyframes es-qr-scan {
+    0% { transform: translateY(-38px); opacity: 0; }
+    15% { opacity: 0.85; }
+    85% { opacity: 0.85; }
+    100% { transform: translateY(38px); opacity: 0; }
+}
+
+@keyframes es-radar-pulse {
+    0% { transform: scale(0.6); opacity: 0.7; }
+    100% { transform: scale(1.3); opacity: 0; }
+}
+
+@keyframes es-eq-pulse {
+    0% { transform: scaleY(0.6); transform-origin: center; }
+    100% { transform: scaleY(1.2); transform-origin: center; }
+}
+
+@keyframes es-sparkle-twinkle {
+    0%, 100% { opacity: 0.15; transform: scale(0.7); }
+    50% { opacity: 0.85; transform: scale(1.2); }
+}
+
+/* Glassmorphic feature blocks enhancement for EventSphere */
+.eventsphere-card .highlight-feature {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+}
+
+.eventsphere-card .highlight-feature:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(37, 99, 235, 0.35);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.07);
+}
+
+.eventsphere-card .featured-tags-row .project-tag {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .es-pos-qr {
+        top: 15px;
+        right: 15px;
+        transform: scale(0.75);
+    }
+    .es-pos-ticket,
+    .es-pos-calendar,
+    .es-pos-soundwave {
+        display: none;
+    }
+    .es-pos-pin {
+        bottom: 15px;
+        left: 10px;
+        transform: scale(0.8);
+    }
+}
+
 .subsection-title {
     font-size: 1.5rem;
     color: var(--primary);

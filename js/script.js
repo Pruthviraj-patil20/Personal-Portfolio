@@ -78,4 +78,40 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Trigger once on load
     revealOnScroll();
+
+    // --- EventSphere Interactive Background & Parallax ---
+    const eventSphereCard = document.getElementById('eventsphere-card');
+    if (eventSphereCard) {
+        const light = eventSphereCard.querySelector('.es-interactive-light');
+        const parallaxItems = eventSphereCard.querySelectorAll('.es-parallax-item');
+
+        eventSphereCard.addEventListener('mousemove', (e) => {
+            const rect = eventSphereCard.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            if (light) {
+                light.style.left = `${x}px`;
+                light.style.top = `${y}px`;
+            }
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const deltaX = (x - centerX) / centerX;
+            const deltaY = (y - centerY) / centerY;
+
+            parallaxItems.forEach(item => {
+                const speed = parseFloat(item.getAttribute('data-speed')) || 0.04;
+                const moveX = (deltaX * speed * 45).toFixed(2);
+                const moveY = (deltaY * speed * 45).toFixed(2);
+                item.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+            });
+        });
+
+        eventSphereCard.addEventListener('mouseleave', () => {
+            parallaxItems.forEach(item => {
+                item.style.transform = 'translate3d(0px, 0px, 0)';
+            });
+        });
+    }
 });

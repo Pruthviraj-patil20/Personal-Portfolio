@@ -1032,6 +1032,723 @@ img {
     }
 }
 
+/* ==========================================================================
+   StudyFlow Premium Themed Background & Animations
+   ========================================================================== */
+.studyflow-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #FFFFFF 0%, #FAF5FF 55%, #F5F3FF 100%);
+    border: 1px solid rgba(233, 213, 255, 0.9);
+    box-shadow: 0 20px 45px -15px rgba(139, 92, 246, 0.08), 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.studyflow-card::before {
+    background: linear-gradient(90deg, #8B5CF6, #10B981) !important;
+}
+
+.studyflow-card .featured-card-header,
+.studyflow-card .featured-body {
+    position: relative;
+    z-index: 2;
+}
+
+.studyflow-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sf-glow-mesh {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(55px);
+    pointer-events: none;
+    opacity: 0.55;
+    transition: opacity 0.5s ease;
+}
+
+.sf-glow-1 {
+    width: 360px;
+    height: 360px;
+    top: -100px;
+    right: -60px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, rgba(99, 102, 241, 0.08) 60%, transparent 80%);
+    animation: es-mesh-drift 14s ease-in-out infinite alternate;
+}
+
+.sf-glow-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -80px;
+    left: -50px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, rgba(139, 92, 246, 0.07) 60%, transparent 80%);
+    animation: es-mesh-drift 18s ease-in-out infinite alternate-reverse;
+}
+
+.sf-glow-3 {
+    width: 240px;
+    height: 240px;
+    top: 40%;
+    left: 42%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+    animation: es-mesh-pulse 10s ease-in-out infinite;
+}
+
+.sf-interactive-light {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(99, 102, 241, 0.03) 50%, transparent 75%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.studyflow-card:hover .sf-interactive-light {
+    opacity: 1;
+}
+
+.sf-waves-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+.sf-wave-1 {
+    animation: es-wave-glide 12s ease-in-out infinite alternate;
+}
+
+.sf-wave-2 {
+    animation: es-wave-dash 24s linear infinite;
+}
+
+.sf-wave-3 {
+    animation: es-wave-glide-rev 15s ease-in-out infinite alternate;
+}
+
+.sf-floating-elements {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sf-pos-kanban {
+    top: 25px;
+    right: 28px;
+}
+
+.sf-pos-pomodoro {
+    bottom: 25px;
+    right: 35px;
+}
+
+.sf-pos-book {
+    top: 48%;
+    right: 6%;
+}
+
+.sf-pos-streak {
+    bottom: 25px;
+    left: 20px;
+}
+
+.sf-pos-badge {
+    top: 22px;
+    left: 32%;
+}
+
+.sf-item {
+    pointer-events: none;
+    will-change: transform;
+}
+
+.sf-item-kanban {
+    opacity: 0.7;
+}
+
+.sf-item-pomodoro {
+    opacity: 0.7;
+}
+
+.sf-item-book {
+    opacity: 0.6;
+    transform: rotate(-4deg);
+}
+
+.sf-item-streak {
+    opacity: 0.65;
+}
+
+.sf-item-badge {
+    opacity: 0.6;
+    transform: rotate(6deg);
+}
+
+.sf-float-1 {
+    animation: es-float-anim-1 7s ease-in-out infinite;
+}
+
+.sf-float-2 {
+    animation: es-float-anim-2 9s ease-in-out infinite;
+}
+
+.sf-float-3 {
+    animation: es-float-anim-3 8.5s ease-in-out infinite;
+}
+
+.sf-float-4 {
+    animation: es-float-anim-4 10s ease-in-out infinite;
+}
+
+.sf-sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #A855F7;
+    box-shadow: 0 0 8px 2px rgba(168, 85, 247, 0.5);
+    animation: es-sparkle-twinkle 4s ease-in-out infinite;
+}
+
+.sf-sp-1 { top: 20%; left: 18%; animation-delay: 0.3s; }
+.sf-sp-2 { top: 76%; left: 36%; animation-delay: 1.5s; }
+.sf-sp-3 { top: 30%; right: 26%; animation-delay: 2.2s; }
+.sf-sp-4 { top: 85%; right: 20%; animation-delay: 0.9s; }
+
+.studyflow-card .highlight-feature {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(233, 213, 255, 0.85);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+}
+
+.studyflow-card .highlight-feature:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(139, 92, 246, 0.35);
+    box-shadow: 0 6px 18px rgba(139, 92, 246, 0.07);
+}
+
+.studyflow-card .featured-tags-row .project-tag {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(233, 213, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    .sf-pos-kanban {
+        top: 15px;
+        right: 15px;
+        transform: scale(0.75);
+    }
+    .sf-pos-pomodoro,
+    .sf-pos-book,
+    .sf-pos-badge {
+        display: none;
+    }
+    .sf-pos-streak {
+        bottom: 15px;
+        left: 10px;
+        transform: scale(0.8);
+    }
+}
+
+/* ==========================================================================
+   SKYCAST Premium Themed Background & Animations
+   ========================================================================== */
+.skycast-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #FFFFFF 0%, #F0FDF4 45%, #F0F9FF 100%);
+    border: 1px solid rgba(186, 230, 253, 0.9);
+    box-shadow: 0 20px 45px -15px rgba(2, 132, 199, 0.08), 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.skycast-card::before {
+    background: linear-gradient(90deg, #0284C7, #06B6D4) !important;
+}
+
+.skycast-card .featured-card-header,
+.skycast-card .featured-body {
+    position: relative;
+    z-index: 2;
+}
+
+.skycast-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sc-glow-mesh {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(55px);
+    pointer-events: none;
+    opacity: 0.55;
+    transition: opacity 0.5s ease;
+}
+
+.sc-glow-1 {
+    width: 360px;
+    height: 360px;
+    top: -100px;
+    right: -60px;
+    background: radial-gradient(circle, rgba(2, 132, 199, 0.2) 0%, rgba(6, 182, 212, 0.08) 60%, transparent 80%);
+    animation: es-mesh-drift 14s ease-in-out infinite alternate;
+}
+
+.sc-glow-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -80px;
+    left: -50px;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.16) 0%, rgba(2, 132, 199, 0.07) 60%, transparent 80%);
+    animation: es-mesh-drift 18s ease-in-out infinite alternate-reverse;
+}
+
+.sc-glow-3 {
+    width: 240px;
+    height: 240px;
+    top: 40%;
+    left: 42%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+    animation: es-mesh-pulse 10s ease-in-out infinite;
+}
+
+.sc-interactive-light {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(2, 132, 199, 0.12) 0%, rgba(6, 182, 212, 0.03) 50%, transparent 75%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.skycast-card:hover .sc-interactive-light {
+    opacity: 1;
+}
+
+.sc-waves-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+.sc-wave-1 {
+    animation: es-wave-glide 12s ease-in-out infinite alternate;
+}
+
+.sc-wave-2 {
+    animation: es-wave-dash 24s linear infinite;
+}
+
+.sc-wave-3 {
+    animation: es-wave-glide-rev 15s ease-in-out infinite alternate;
+}
+
+.sc-floating-elements {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sc-pos-suncloud {
+    top: 25px;
+    right: 28px;
+}
+
+.sc-pos-thermo {
+    bottom: 25px;
+    right: 35px;
+}
+
+.sc-pos-breeze {
+    top: 48%;
+    right: 6%;
+}
+
+.sc-pos-aqi {
+    bottom: 25px;
+    left: 20px;
+}
+
+.sc-pos-drop {
+    top: 22px;
+    left: 32%;
+}
+
+.sc-item {
+    pointer-events: none;
+    will-change: transform;
+}
+
+.sc-item-suncloud {
+    opacity: 0.7;
+}
+
+.sc-item-thermo {
+    opacity: 0.7;
+}
+
+.sc-item-breeze {
+    opacity: 0.6;
+}
+
+.sc-item-aqi {
+    opacity: 0.65;
+}
+
+.sc-item-drop {
+    opacity: 0.6;
+}
+
+.sc-float-1 {
+    animation: es-float-anim-1 7s ease-in-out infinite;
+}
+
+.sc-float-2 {
+    animation: es-float-anim-2 9s ease-in-out infinite;
+}
+
+.sc-float-3 {
+    animation: es-float-anim-3 8.5s ease-in-out infinite;
+}
+
+.sc-float-4 {
+    animation: es-float-anim-4 10s ease-in-out infinite;
+}
+
+.sc-sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #38BDF8;
+    box-shadow: 0 0 8px 2px rgba(56, 189, 248, 0.5);
+    animation: es-sparkle-twinkle 4s ease-in-out infinite;
+}
+
+.sc-sp-1 { top: 22%; left: 16%; animation-delay: 0.2s; }
+.sc-sp-2 { top: 78%; left: 38%; animation-delay: 1.4s; }
+.sc-sp-3 { top: 32%; right: 28%; animation-delay: 2.1s; }
+.sc-sp-4 { top: 88%; right: 18%; animation-delay: 0.8s; }
+
+.skycast-card .highlight-feature {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(186, 230, 253, 0.85);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+}
+
+.skycast-card .highlight-feature:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(2, 132, 199, 0.35);
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.07);
+}
+
+.skycast-card .featured-tags-row .project-tag {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(186, 230, 253, 0.9);
+}
+
+@media (max-width: 768px) {
+    .sc-pos-suncloud {
+        top: 15px;
+        right: 15px;
+        transform: scale(0.75);
+    }
+    .sc-pos-thermo,
+    .sc-pos-breeze,
+    .sc-pos-drop {
+        display: none;
+    }
+    .sc-pos-aqi {
+        bottom: 15px;
+        left: 10px;
+        transform: scale(0.8);
+    }
+}
+
+/* ==========================================================================
+   Movie Search App Premium Themed Background & Animations
+   ========================================================================== */
+.moviesearch-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #FFFFFF 0%, #FFFBEB 50%, #FAF5FF 100%);
+    border: 1px solid rgba(253, 230, 138, 0.85);
+    box-shadow: 0 20px 45px -15px rgba(245, 158, 11, 0.08), 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.moviesearch-card::before {
+    background: linear-gradient(90deg, #F59E0B, #7C3AED) !important;
+}
+
+.moviesearch-card .featured-card-header,
+.moviesearch-card .featured-body {
+    position: relative;
+    z-index: 2;
+}
+
+.moviesearch-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.ms-projector-beam {
+    position: absolute;
+    top: -30px;
+    left: 8%;
+    width: 200px;
+    height: 320px;
+    background: linear-gradient(145deg, rgba(245, 158, 11, 0.12) 0%, rgba(124, 58, 237, 0.03) 60%, transparent 100%);
+    transform: rotate(-18deg);
+    transform-origin: top center;
+    animation: es-spotlight-sweep-left 9s ease-in-out infinite alternate;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.ms-glow-mesh {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(55px);
+    pointer-events: none;
+    opacity: 0.55;
+    transition: opacity 0.5s ease;
+}
+
+.ms-glow-1 {
+    width: 360px;
+    height: 360px;
+    top: -100px;
+    right: -60px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(244, 63, 94, 0.07) 60%, transparent 80%);
+    animation: es-mesh-drift 14s ease-in-out infinite alternate;
+}
+
+.ms-glow-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -80px;
+    left: -50px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(245, 158, 11, 0.06) 60%, transparent 80%);
+    animation: es-mesh-drift 18s ease-in-out infinite alternate-reverse;
+}
+
+.ms-glow-3 {
+    width: 240px;
+    height: 240px;
+    top: 40%;
+    left: 42%;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.12) 0%, transparent 70%);
+    animation: es-mesh-pulse 10s ease-in-out infinite;
+}
+
+.ms-interactive-light {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(124, 58, 237, 0.03) 50%, transparent 75%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.moviesearch-card:hover .ms-interactive-light {
+    opacity: 1;
+}
+
+.ms-waves-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+.ms-wave-1 {
+    animation: es-wave-glide 12s ease-in-out infinite alternate;
+}
+
+.ms-wave-2 {
+    animation: es-wave-dash 24s linear infinite;
+}
+
+.ms-wave-3 {
+    animation: es-wave-glide-rev 15s ease-in-out infinite alternate;
+}
+
+.ms-floating-elements {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ms-pos-film {
+    top: 25px;
+    right: 28px;
+}
+
+.ms-pos-clapper {
+    bottom: 25px;
+    right: 35px;
+}
+
+.ms-pos-camera {
+    top: 48%;
+    right: 6%;
+}
+
+.ms-pos-stars {
+    bottom: 25px;
+    left: 20px;
+}
+
+.ms-pos-ticket {
+    top: 22px;
+    left: 32%;
+}
+
+.ms-item {
+    pointer-events: none;
+    will-change: transform;
+}
+
+.ms-item-film {
+    opacity: 0.7;
+}
+
+.ms-item-clapper {
+    opacity: 0.7;
+    transform: rotate(5deg);
+}
+
+.ms-item-camera {
+    opacity: 0.6;
+}
+
+.ms-item-stars {
+    opacity: 0.65;
+}
+
+.ms-item-ticket {
+    opacity: 0.6;
+    transform: rotate(-6deg);
+}
+
+.ms-float-1 {
+    animation: es-float-anim-1 7s ease-in-out infinite;
+}
+
+.ms-float-2 {
+    animation: es-float-anim-2 9s ease-in-out infinite;
+}
+
+.ms-float-3 {
+    animation: es-float-anim-3 8.5s ease-in-out infinite;
+}
+
+.ms-float-4 {
+    animation: es-float-anim-4 10s ease-in-out infinite;
+}
+
+.ms-sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #F59E0B;
+    box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.5);
+    animation: es-sparkle-twinkle 4s ease-in-out infinite;
+}
+
+.ms-sp-1 { top: 22%; left: 16%; animation-delay: 0.2s; }
+.ms-sp-2 { top: 78%; left: 38%; animation-delay: 1.4s; }
+.ms-sp-3 { top: 32%; right: 28%; animation-delay: 2.1s; }
+.ms-sp-4 { top: 88%; right: 18%; animation-delay: 0.8s; }
+
+.moviesearch-card .highlight-feature {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(253, 230, 138, 0.85);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+}
+
+.moviesearch-card .highlight-feature:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(245, 158, 11, 0.35);
+    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.07);
+}
+
+.moviesearch-card .featured-tags-row .project-tag {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(253, 230, 138, 0.9);
+}
+
+@media (max-width: 768px) {
+    .ms-pos-film {
+        top: 15px;
+        right: 15px;
+        transform: scale(0.75);
+    }
+    .ms-pos-clapper,
+    .ms-pos-camera,
+    .ms-pos-ticket {
+        display: none;
+    }
+    .ms-pos-stars {
+        bottom: 15px;
+        left: 10px;
+        transform: scale(0.8);
+    }
+}
+
 .subsection-title {
     font-size: 1.5rem;
     color: var(--primary);

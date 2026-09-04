@@ -2482,3 +2482,97 @@ img {
         line-height: 1.6;
     }
 }
+
+/* --- NASA APOD Card Theme --- */
+.nasa-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #0B0F19 0%, #171E30 50%, #0F172A 100%);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 20px 45px -15px rgba(2, 132, 199, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+    color: #F8FAFC;
+}
+
+.nasa-card .featured-title,
+.nasa-card .featured-description,
+.nasa-card .featured-tagline,
+.nasa-card .featured-highlights-grid strong,
+.nasa-card .featured-highlights-grid p {
+    color: #F8FAFC;
+}
+
+.nasa-card .featured-tagline {
+    color: #94A3B8;
+}
+
+.nasa-card .featured-description {
+    color: #CBD5E1;
+}
+
+.nasa-card .highlight-feature {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.nasa-card .highlight-feature p {
+    color: #94A3B8;
+}
+
+.nasa-card .highlight-feature:hover {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+.nasa-card::before {
+    background: linear-gradient(90deg, #38BDF8, #818CF8) !important;
+}
+
+.nasa-card .featured-tags-row .project-tag {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: #E2E8F0;
+}
+
+.nasa-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.nasa-card .featured-card-header,
+.nasa-card .featured-body {
+    position: relative;
+    z-index: 2;
+}
+
+.nasa-glow-mesh {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.nasa-glow-1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -50px;
+    background: #38BDF8;
+}
+
+.nasa-glow-2 {
+    width: 250px;
+    height: 250px;
+    bottom: -50px;
+    right: -50px;
+    background: #818CF8;
+}

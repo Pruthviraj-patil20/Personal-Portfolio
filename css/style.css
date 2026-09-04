@@ -2306,3 +2306,179 @@ img {
         padding: 1.5rem;
     }
 }
+
+/* --- Welcome Intro Animation --- */
+.welcome-intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #050505; /* Deep dark professional */
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: opacity 0.8s cubic-bezier(0.8, 0, 0.2, 1), transform 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.welcome-intro.hide {
+    opacity: 0;
+    transform: scale(1.05); /* Slight scale down effect when revealing homepage */
+    pointer-events: none;
+}
+
+.intro-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.intro-particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) scale(1); opacity: 0.2; }
+    50% { transform: translateY(-20px) scale(1.2); opacity: 0.5; }
+    100% { transform: translateY(0px) scale(1); opacity: 0.2; }
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.intro-welcome {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: revealText 1s ease 0.5s forwards;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.intro-name {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+.intro-name .letter {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    filter: blur(10px);
+    animation: letterReveal 0.8s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+}
+
+.intro-name .space {
+    width: 1rem;
+}
+
+.intro-line {
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    margin: 1.5rem 0;
+    animation: expandLine 1s cubic-bezier(0.8, 0, 0.2, 1) 1.5s forwards;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.intro-portfolio {
+    font-size: 1.5rem;
+    letter-spacing: 8px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: revealText 1s ease 1.7s forwards;
+}
+
+.intro-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: revealText 1s ease 2s forwards;
+}
+
+.intro-loader-container {
+    margin-top: 3.5rem;
+    opacity: 0;
+    animation: fadeIn 1s ease 2.3s forwards;
+}
+
+.intro-loader {
+    width: 36px;
+    height: 36px;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-top: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+/* Animations */
+@keyframes revealText {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes letterReveal {
+    0% { opacity: 0; transform: translateY(20px) scale(0.95); filter: blur(10px); }
+    100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes expandLine {
+    0% { width: 0; opacity: 0; }
+    50% { opacity: 1; }
+    100% { width: 100%; max-width: 400px; opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .intro-name {
+        font-size: 2.5rem;
+    }
+    .intro-portfolio {
+        font-size: 1.2rem;
+        letter-spacing: 6px;
+    }
+    .intro-subtitle {
+        font-size: 0.75rem;
+        padding: 0 1rem;
+        line-height: 1.6;
+    }
+}

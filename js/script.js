@@ -118,4 +118,56 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // --- Welcome Intro Animation ---
+    const ENABLE_INTRO = true; // Set to false to disable the cinematic intro
+    
+    const welcomeIntro = document.getElementById('welcome-intro');
+    if (welcomeIntro) {
+        if (!ENABLE_INTRO) {
+            welcomeIntro.style.display = 'none';
+        } else {
+            // Prevent scrolling while intro is active
+            document.body.style.overflow = 'hidden';
+            window.scrollTo(0, 0);
+
+            // Stagger letter animations
+            const letters = document.querySelectorAll('.intro-name .letter');
+            letters.forEach((letter, index) => {
+                letter.style.animationDelay = `${0.8 + (index * 0.05)}s`;
+            });
+
+            // Create background particles
+            const particlesContainer = document.getElementById('intro-particles');
+            if (particlesContainer) {
+                const numParticles = 25;
+                for (let i = 0; i < numParticles; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('intro-particle');
+                    
+                    // Randomize position, size, and animation delay
+                    const size = Math.random() * 4 + 1;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.top = `${Math.random() * 100}%`;
+                    particle.style.animationDelay = `${Math.random() * 5}s`;
+                    particle.style.animationDuration = `${Math.random() * 4 + 4}s`;
+                    
+                    particlesContainer.appendChild(particle);
+                }
+            }
+
+            // Remove intro after sequence completes
+            setTimeout(() => {
+                welcomeIntro.classList.add('hide');
+                document.body.style.overflow = ''; // Restore scrolling
+                
+                // Remove from DOM after fade out completes
+                setTimeout(() => {
+                    welcomeIntro.remove();
+                }, 800);
+            }, 3800); // Wait for the whole animation sequence (2.3s loader + 1.5s delay)
+        }
+    }
 });

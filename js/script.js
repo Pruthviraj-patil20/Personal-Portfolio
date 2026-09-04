@@ -119,23 +119,168 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Welcome Intro Animation ---
+    // --- Welcome Intro Animation with Cinematic Sound ---
     const ENABLE_INTRO = true; // Set to false to disable the cinematic intro
+    
+    // --- Sound Manager ---
+    class SoundManager {
+        constructor() {
+            this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+            this.isMuted = localStorage.getItem('portfolio_muted') === 'true';
+            this.initialized = false;
+            
+            // Respect prefers-reduced-motion / accessibility
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) this.isMuted = true;
+        }
+
+        init() {
+            if (this.initialized) return;
+            // Resume context if suspended (browser policy)
+            if (this.ctx.state === 'suspended') {
+                this.ctx.resume();
+            }
+            this.initialized = true;
+        }
+
+        toggleMute() {
+            this.isMuted = !this.isMuted;
+            localStorage.setItem('portfolio_muted', this.isMuted);
+            return this.isMuted;
+        }
+
+        playWhoosh(duration = 1, frequencyStart = 400, frequencyEnd = 50, volume = 0.1) {
+            if (this.isMuted) return;
+            this.init();
+
+            const osc = this.ctx.createOscillator();
+            const gainNode = this.ctx.createGain();
+            
+            // Create noise-like effect by modulating rapidly
+            osc.type = 'sine';
+            
+            // Frequency sweep for whoosh
+            osc.frequency.setValueAtTime(frequencyStart, this.ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(frequencyEnd, this.ctx.currentTime + duration);
+            
+            // Envelope (Fade in and out)
+            gainNode.gain.setValueAtTime(0, this.ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(volume, this.ctx.currentTime + (duration * 0.2));
+            gainNode.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+
+            osc.connect(gainNode);
+            gainNode.connect(this.ctx.destination);
+
+            osc.start();
+            osc.stop(this.ctx.currentTime + duration);
+        }
+
+        playImpact() {
+            if (this.isMuted) return;
+            this.init();
+
+            // Low frequency impact
+            const osc = this.ctx.createOscillator();
+            const gainNode = this.ctx.createGain();
+
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(150, this.ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(20, this.ctx.currentTime + 0.5);
+
+            gainNode.gain.setValueAtTime(0, this.ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.3, this.ctx.currentTime + 0.05);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.5);
+
+            osc.connect(gainNode);
+            gainNode.connect(this.ctx.destination);
+
+            osc.start();
+            osc.stop(this.ctx.currentTime + 0.5);
+        }
+        
+        playSparkle() {
+            if (this.isMuted) return;
+            this.init();
+            
+            const osc = this.ctx.createOscillator();
+            const gainNode = this.ctx.createGain();
+            
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(1200, this.ctx.currentTime);
+            osc.frequency.linearRampToValueAtTime(800, this.ctx.currentTime + 0.2);
+            
+            gainNode.gain.setValueAtTime(0, this.ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.05, this.ctx.currentTime + 0.05);
+            gainNode.gain.linearRampToValueAtTime(0, this.ctx.currentTime + 0.2);
+            
+            osc.connect(gainNode);
+            gainNode.connect(this.ctx.destination);
+            
+            osc.start();
+            osc.stop(this.ctx.currentTime + 0.2);
+        }
+    }
     
     const welcomeIntro = document.getElementById('welcome-intro');
     if (welcomeIntro) {
         if (!ENABLE_INTRO) {
             welcomeIntro.style.display = 'none';
         } else {
+            const soundManager = new SoundManager();
+            const soundToggleBtn = document.getElementById('intro-sound-toggle');
+            
+            // Initial toggle UI state
+            if (soundToggleBtn) {
+                const icon = soundToggleBtn.querySelector('i');
+                if (soundManager.isMuted) {
+                    icon.classList.remove('fa-volume-up');
+                    icon.classList.add('fa-volume-mute');
+                } else {
+                    icon.classList.remove('fa-volume-mute');
+                    icon.classList.add('fa-volume-up');
+                }
+                
+                // Toggle event listener
+                soundToggleBtn.addEventListener('click', () => {
+                    const isMuted = soundManager.toggleMute();
+                    if (isMuted) {
+                        icon.classList.remove('fa-volume-up');
+                        icon.classList.add('fa-volume-mute');
+                    } else {
+                        icon.classList.remove('fa-volume-mute');
+                        icon.classList.add('fa-volume-up');
+                        soundManager.playSparkle(); // feedback sound
+                    }
+                });
+            }
+
             // Prevent scrolling while intro is active
             document.body.style.overflow = 'hidden';
             window.scrollTo(0, 0);
 
-            // Stagger letter animations
+            // Play startup whoosh shortly after load
+            setTimeout(() => {
+                soundManager.playWhoosh(1.5, 300, 50, 0.05);
+            }, 300);
+
+            // Stagger letter animations and sound impacts
             const letters = document.querySelectorAll('.intro-name .letter');
             letters.forEach((letter, index) => {
-                letter.style.animationDelay = `${0.8 + (index * 0.05)}s`;
+                const delayMs = 800 + (index * 50);
+                letter.style.animationDelay = `${delayMs / 1000}s`;
+                
+                // Play tiny impact per letter
+                setTimeout(() => {
+                    if(index === 0 || index === letters.length - 1) {
+                        soundManager.playImpact();
+                    }
+                }, delayMs);
             });
+            
+            // "PORTFOLIO" text appearance sound
+            setTimeout(() => {
+                soundManager.playSparkle();
+            }, 1700);
 
             // Create background particles
             const particlesContainer = document.getElementById('intro-particles');
@@ -160,6 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Remove intro after sequence completes
             setTimeout(() => {
+                soundManager.playWhoosh(1, 600, 100, 0.08); // Outro transition sound
                 welcomeIntro.classList.add('hide');
                 document.body.style.overflow = ''; // Restore scrolling
                 

@@ -2576,3 +2576,97 @@ img {
     right: -50px;
     background: #818CF8;
 }
+
+/* --- Project Panopticon Theme --- */
+.panopticon-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #0F172A 0%, #020617 50%, #1E1B4B 100%);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    box-shadow: 0 20px 45px -15px rgba(16, 185, 129, 0.15), 0 1px 3px rgba(0, 0, 0, 0.3);
+    color: #F8FAFC;
+}
+
+.panopticon-card .featured-title,
+.panopticon-card .featured-description,
+.panopticon-card .featured-tagline,
+.panopticon-card .featured-highlights-grid strong,
+.panopticon-card .featured-highlights-grid p {
+    color: #F8FAFC;
+}
+
+.panopticon-card .featured-tagline {
+    color: #94A3B8;
+}
+
+.panopticon-card .featured-description {
+    color: #CBD5E1;
+}
+
+.panopticon-card .highlight-feature {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.panopticon-card .highlight-feature p {
+    color: #94A3B8;
+}
+
+.panopticon-card .highlight-feature:hover {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+.panopticon-card::before {
+    background: linear-gradient(90deg, #10B981, #8B5CF6) !important;
+}
+
+.panopticon-card .featured-tags-row .project-tag {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    color: #E2E8F0;
+}
+
+.panopticon-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.panopticon-card .featured-card-header,
+.panopticon-card .featured-body {
+    position: relative;
+    z-index: 2;
+}
+
+.panopticon-glow-mesh {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+.panopticon-glow-1 {
+    width: 350px;
+    height: 350px;
+    top: -150px;
+    left: -100px;
+    background: #10B981;
+}
+
+.panopticon-glow-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -100px;
+    right: -100px;
+    background: #8B5CF6;
+}

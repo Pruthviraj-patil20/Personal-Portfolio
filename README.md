@@ -1,33 +1,37 @@
-# Pruthviraj Patil - Personal Portfolio
+# 🌌 Pruthviraj Patil - Premium Personal Portfolio
 
-Welcome to the repository for my personal developer portfolio! This website serves as a digital resume and a showcase of my projects, skills, and journey as a B.Tech CSE (Data Science) student and aspiring Software Engineer.
+Welcome to the repository for my professional developer portfolio! This website serves as a digital resume and a dynamic showcase of my projects, skills, and journey as a B.Tech CSE (Data Science) student, aspiring Software Engineer, and Creative Problem Solver.
+
+Featuring a **Cinematic Welcome Animation** and glassmorphic UI elements, the portfolio is designed to deliver a high-end, agency-level user experience using purely vanilla web technologies.
 
 ## 🚀 Live Demo
 
-*(Add your Vercel deployment link here once deployed, e.g., https://your-portfolio.vercel.app)*
+*(Add your GitHub Pages / Vercel deployment link here once deployed, e.g., https://pruthviraj-patil20.github.io/Personal-Portfolio/)*
 
 ## 🌟 Featured Projects
 
-- **[EventSphere](https://pruthviraj-patil20.github.io/Event-Management-System/)** — Enterprise-Grade Event Discovery, SaaS Management, and Cryptographic QR Ticketing Platform built with Node.js, Express, MongoDB, Vanilla JS, and Chart.js. Features digital ticket wallet, dynamic QR generation, organizer analytics, and admin moderation. ([GitHub Repo](https://github.com/Pruthviraj-patil20/Event-Management-System))
-- **[StudyFlow](https://pruthviraj-patil20.github.io/Study-Planner/)** — Comprehensive Study Planner and Productivity Dashboard built with pure HTML5, CSS3, and Vanilla JavaScript. Features Kanban boards, Pomodoro timer, calendar planner, and local storage persistence. ([GitHub Repo](https://github.com/Pruthviraj-patil20/Study-Planner))
-- **[SKYCAST](https://pruthviraj-patil20.github.io/Weather-App/)** — Real-Time Weather Application & Air Quality Dashboard built with Vanilla JavaScript (ES6 Modules) and CSS3. Features OpenWeatherMap API integration, 5-day forecasts, geolocation, city search, favorites management, and theme toggling. ([GitHub Repo](https://github.com/Pruthviraj-patil20/Weather-App))
-- **[Movie Search App](https://pruthviraj-patil20.github.io/Movie-Search-App/)** — Cinematic Movie Discovery & Watchlist Web Application built with Vanilla JavaScript (ES6 Modules), CSS3, Vite, and TMDB API. Features debounced search, genre & rating filters, YouTube trailer modal, watchlist/favorites LocalStorage persistence, and light/dark theme. ([GitHub Repo](https://github.com/Pruthviraj-patil20/Movie-Search-App))
+- **[Project Panopticon](https://pruthviraj-patil20.github.io/PROJECT-PANOPTICON/)** 🛡️ — An intelligent, ethical time-series machine learning pipeline designed to identify academic dishonesty in remote examinations while safeguarding innocent students from false accusations. Built with Pandas, Scikit-Learn, and an interactive Web Dashboard. ([GitHub Repo](https://github.com/Pruthviraj-patil20/PROJECT-PANOPTICON))
+- **[NASA APOD Viewer](https://pruthviraj-patil20.github.io/-NASA-APOD-Viewer/)** 🛰️ — A web application leveraging the official NASA Astronomy Picture of the Day (APOD) API to display breathtaking cosmic imagery and educational descriptions daily. Features time travel to past cosmic events and responsive stellar design. ([GitHub Repo](https://github.com/Pruthviraj-patil20/-NASA-APOD-Viewer))
+- **[EventSphere](https://pruthviraj-patil20.github.io/Event-Management-System/)** 🎉 — Enterprise-Grade Event Discovery, SaaS Management, and Cryptographic QR Ticketing Platform built with Node.js, Express, MongoDB, Vanilla JS, and Chart.js. Features digital ticket wallet, dynamic QR generation, organizer analytics, and admin moderation. ([GitHub Repo](https://github.com/Pruthviraj-patil20/Event-Management-System))
+- **[StudyFlow](https://pruthviraj-patil20.github.io/Study-Planner/)** ⏱️ — Comprehensive Study Planner and Productivity Dashboard built with pure HTML5, CSS3, and Vanilla JavaScript. Features Kanban boards, Pomodoro timer, calendar planner, and local storage persistence. ([GitHub Repo](https://github.com/Pruthviraj-patil20/Study-Planner))
+- **[Movie Search App](https://pruthviraj-patil20.github.io/Movie-Search-App/)** 🎬 — Cinematic Movie Discovery & Watchlist Web Application built with Vanilla JavaScript (ES6 Modules), CSS3, Vite, and TMDB API. Features debounced search, genre & rating filters, YouTube trailer modal, watchlist/favorites LocalStorage persistence, and light/dark theme. ([GitHub Repo](https://github.com/Pruthviraj-patil20/Movie-Search-App))
+- **[SKYCAST](https://pruthviraj-patil20.github.io/Weather-App/)** ☁️ — Real-Time Weather Application & Air Quality Dashboard built with Vanilla JavaScript (ES6 Modules) and CSS3. Features OpenWeatherMap API integration, 5-day forecasts, geolocation, city search, favorites management, and theme toggling. ([GitHub Repo](https://github.com/Pruthviraj-patil20/Weather-App))
 
 ## 🛠️ Built With
 
-This portfolio is built from scratch using modern web technologies without any heavy frameworks, ensuring fast load times and a clean architecture:
+This portfolio is built from scratch using modern web technologies without any heavy frameworks, ensuring blazing-fast load times, semantic accessibility, and a clean architecture:
 
 * **HTML5** - Semantic structure and accessibility
-* **CSS3** - Custom styling, CSS Grid/Flexbox layouts, responsive design, and animations (no CSS frameworks like Tailwind or Bootstrap)
-* **JavaScript (Vanilla)** - DOM manipulation, scroll reveal animations, and interactive elements
+* **CSS3** - Custom styling, CSS Grid/Flexbox layouts, premium UI effects (blur, glassmorphism), and keyframe animations (no CSS frameworks like Tailwind or Bootstrap)
+* **JavaScript (Vanilla)** - Cinematic staggered letter animations, floating particle engines, scroll reveals, and interactive event listeners.
 
 ## 📂 Project Structure
 
-```
+```text
 ├── css/
-│   └── style.css          # Main stylesheet with theme variables and responsive styles
+│   └── style.css          # Main stylesheet with theme variables, animations, and responsive styles
 ├── js/
-│   └── script.js          # JavaScript for navigation and scroll animations
+│   └── script.js          # JavaScript for cinematic intro, navigation, and scroll animations
 ├── assets/
 │   └── images/            # Images used in the portfolio
 ├── index.html             # Main HTML document

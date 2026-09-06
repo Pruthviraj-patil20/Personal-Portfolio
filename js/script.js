@@ -316,4 +316,58 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3800); // Wait for the whole animation sequence (2.3s loader + 1.5s delay)
         }
     }
+    // --- Image Modal/Lightbox ---
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.querySelector('.cert-modal-close');
+    
+    // Select all overlay view buttons and images
+    const overlayButtons = document.querySelectorAll('.cert-overlay .btn');
+    const certImages = document.querySelectorAll('.cert-img');
+    
+    function openModal(imgSrc) {
+        if (!modal) return;
+        modal.style.display = 'block';
+        setTimeout(() => modal.classList.add('show'), 10);
+        modalImg.src = imgSrc;
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+        if (!modal) return;
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }, 300); 
+    }
+
+    // Attach to overlay buttons
+    overlayButtons.forEach((btn, index) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            const imgSrc = certImages[index].src;
+            openModal(imgSrc);
+        });
+    });
+    
+    // Attach directly to images as well
+    certImages.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            openModal(img.src);
+        });
+    });
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+    
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    }
 });

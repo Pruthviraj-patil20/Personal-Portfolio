@@ -17,6 +17,13 @@ Featuring a **Cinematic Welcome Animation** and glassmorphic UI elements, the po
 - **[Movie Search App](https://pruthviraj-patil20.github.io/Movie-Search-App/)** 🎬 — Cinematic Movie Discovery & Watchlist Web Application built with Vanilla JavaScript (ES6 Modules), CSS3, Vite, and TMDB API. Features debounced search, genre & rating filters, YouTube trailer modal, watchlist/favorites LocalStorage persistence, and light/dark theme. ([GitHub Repo](https://github.com/Pruthviraj-patil20/Movie-Search-App))
 - **[SKYCAST](https://pruthviraj-patil20.github.io/Weather-App/)** ☁️ — Real-Time Weather Application & Air Quality Dashboard built with Vanilla JavaScript (ES6 Modules) and CSS3. Features OpenWeatherMap API integration, 5-day forecasts, geolocation, city search, favorites management, and theme toggling. ([GitHub Repo](https://github.com/Pruthviraj-patil20/Weather-App))
 
+## 📜 Certifications & Achievements
+
+- **Inclusive Open Source Community Orientation (LFC102)** 🐧 — The Linux Foundation (Credential ID: `LF-sqgvexqjk9` | August 17, 2026)
+- **Artificial Intelligence Internship – Training** 🤖 — iSTUDIO (Credential ID: `ISAFIT3323329` | August 26, 2026)
+- **Artificial Intelligence Internship** 💼 — Internship Studio (Credential ID: `ISAFII3323329` | May 23 – August 26, 2026)
+- **Road to GSoC: GIT and GITHUB Open Source Workshop** 🌐 — Advanced Tech Club, NIAT Pune (February 07, 2026)
+
 ## 🛠️ Built With
 
 This portfolio is built from scratch using modern web technologies without any heavy frameworks, ensuring blazing-fast load times, semantic accessibility, and a clean architecture:
@@ -33,7 +40,8 @@ This portfolio is built from scratch using modern web technologies without any h
 ├── js/
 │   └── script.js          # JavaScript for cinematic intro, navigation, and scroll animations
 ├── assets/
-│   └── images/            # Images used in the portfolio
+│   ├── certificates/      # Verified credential PDFs and preview thumbnails
+│   └── images/            # Images and icons used in the portfolio
 ├── index.html             # Main HTML document
 └── README.md              # Project documentation
 ```

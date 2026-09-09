@@ -2712,10 +2712,10 @@ img {
     align-items: stretch;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .certifications-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 2rem;
     }
 }
 
@@ -2731,6 +2731,7 @@ img {
     box-shadow: 0 20px 40px -10px rgba(30, 58, 138, 0.08), 0 1px 3px rgba(0,0,0,0.05);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     max-width: 900px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
 }

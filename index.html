@@ -132,54 +132,264 @@
     </section>
 
     <!-- Skills Section -->
+    <!-- Technical Skills Section -->
     <section id="skills" class="skills section">
         <div class="container">
-            <h2 class="section-title reveal">Technical Skills</h2>
+            <h2 class="section-title reveal">Technical Skills & Proficiency</h2>
+            <p class="section-subtitle reveal" style="text-align: center; color: var(--text-muted); margin-top: -2rem; margin-bottom: 3rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                A comprehensive visual breakdown of my technical proficiencies, development frameworks, data science toolkits, and engineering capabilities.
+            </p>
+
+            <!-- Domain Proficiency Graphs (Circular Radial Meters) -->
+            <div class="skills-summary-strip reveal">
+                <div class="summary-metric-card">
+                    <div class="metric-circle">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle blue" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">90%</text>
+                        </svg>
+                    </div>
+                    <div class="metric-content">
+                        <h4>Web Engineering</h4>
+                        <p>Modern HTML5, CSS3, ES6 & Node.js</p>
+                    </div>
+                </div>
+
+                <div class="summary-metric-card">
+                    <div class="metric-circle">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle purple" stroke-dasharray="82, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">82%</text>
+                        </svg>
+                    </div>
+                    <div class="metric-content">
+                        <h4>Data Science & ML</h4>
+                        <p>Pandas, NumPy, Scikit-Learn</p>
+                    </div>
+                </div>
+
+                <div class="summary-metric-card">
+                    <div class="metric-circle">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle amber" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">85%</text>
+                        </svg>
+                    </div>
+                    <div class="metric-content">
+                        <h4>Core Programming</h4>
+                        <p>Python, C++ & Data Structures</p>
+                    </div>
+                </div>
+
+                <div class="summary-metric-card">
+                    <div class="metric-circle">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle green" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">80%</text>
+                        </svg>
+                    </div>
+                    <div class="metric-content">
+                        <h4>Databases & Tools</h4>
+                        <p>SQL, MongoDB, Git & Linux</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Skill Category Cards with Animated Bar Graphs -->
             <div class="skills-grid reveal">
                 
+                <!-- Programming Languages -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming</h3>
-                    <div class="skill-tags">
-                        <span class="tag"><i class="fab fa-python"></i> Python</span>
-                        <span class="tag"><i class="fas fa-c"></i> C++</span>
+                    <div class="skill-cat-header">
+                        <div class="cat-icon-wrap"><i class="fas fa-code"></i></div>
+                        <div>
+                            <h3>Programming Languages</h3>
+                            <span class="cat-subtitle">Core Syntax & Algorithmic Logic</span>
+                        </div>
+                    </div>
+                    <div class="skill-bars-list">
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-js"></i> JavaScript (ES6+)</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-c"></i> C++</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 70%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Web Development -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
-                    <div class="skill-tags">
-                        <span class="tag"><i class="fab fa-html5"></i> HTML</span>
-                        <span class="tag"><i class="fab fa-css3-alt"></i> CSS</span>
-                        <span class="tag"><i class="fab fa-js"></i> JavaScript</span>
-                        <span class="tag"><i class="fab fa-node-js"></i> Node.js</span>
-                        <span class="tag"><i class="fas fa-server"></i> Express.js</span>
+                    <div class="skill-cat-header">
+                        <div class="cat-icon-wrap"><i class="fas fa-laptop-code"></i></div>
+                        <div>
+                            <h3>Web Development</h3>
+                            <span class="cat-subtitle">Frontend & Full-Stack Systems</span>
+                        </div>
+                    </div>
+                    <div class="skill-bars-list">
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-html5"></i> HTML5 & Semantic Web</span>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 92%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-css3-alt"></i> Modern CSS3 & Glassmorphism</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-node-js"></i> Node.js & Express.js</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 75%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Data Science & Machine Learning -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-chart-network"></i> Data Science & AI</h3>
-                    <div class="skill-tags">
-                        <span class="tag"><i class="fas fa-chart-bar"></i> NumPy</span>
-                        <span class="tag"><i class="fas fa-table"></i> Pandas</span>
-                        <span class="tag"><i class="fas fa-chart-line"></i> Matplotlib</span>
-                        <span class="tag"><i class="fas fa-brain"></i> Machine Learning</span>
+                    <div class="skill-cat-header">
+                        <div class="cat-icon-wrap"><i class="fas fa-chart-network"></i></div>
+                        <div>
+                            <h3>Data Science & AI</h3>
+                            <span class="cat-subtitle">Analysis, Modeling & Visualizations</span>
+                        </div>
+                    </div>
+                    <div class="skill-bars-list">
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-table"></i> Pandas & NumPy</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-brain"></i> Machine Learning (Scikit-Learn)</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-chart-line"></i> Matplotlib & Data Viz</span>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 78%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Databases & Architecture -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Databases</h3>
-                    <div class="skill-tags">
-                        <span class="tag"><i class="fas fa-server"></i> SQL</span>
-                        <span class="tag"><i class="fas fa-leaf"></i> MongoDB</span>
+                    <div class="skill-cat-header">
+                        <div class="cat-icon-wrap"><i class="fas fa-database"></i></div>
+                        <div>
+                            <h3>Databases & Storage</h3>
+                            <span class="cat-subtitle">Relational & Document Schemas</span>
+                        </div>
+                    </div>
+                    <div class="skill-bars-list">
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-server"></i> SQL (Relational Modeling)</span>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 78%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-leaf"></i> MongoDB (NoSQL)</span>
+                                <span class="skill-percent">74%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 74%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Development Tools & Workflow -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Development Tools</h3>
-                    <div class="skill-tags">
-                        <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
-                        <span class="tag"><i class="fab fa-github"></i> GitHub</span>
-                        <span class="tag"><i class="fas fa-file-code"></i> VS Code</span>
+                    <div class="skill-cat-header">
+                        <div class="cat-icon-wrap"><i class="fas fa-tools"></i></div>
+                        <div>
+                            <h3>Dev Tools & Workflow</h3>
+                            <span class="cat-subtitle">Version Control & Environment</span>
+                        </div>
+                    </div>
+                    <div class="skill-bars-list">
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 88%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-terminal"></i> Linux CLI & Bash</span>
+                                <span class="skill-percent">76%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 76%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fas fa-file-code"></i> VS Code & Workflow</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress-track">
+                                <div class="skill-progress-fill" style="--skill-percent: 85%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

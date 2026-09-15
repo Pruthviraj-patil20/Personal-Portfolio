@@ -370,4 +370,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- Contact Form Submission ---
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent 404/405 errors from POST to #
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            btn.style.backgroundColor = '#10B981';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.backgroundColor = '';
+                contactForm.reset();
+            }, 3000);
+        });
+    }
 });

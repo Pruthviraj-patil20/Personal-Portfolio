@@ -125,8 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Sound Manager ---
     class SoundManager {
         constructor() {
-            this.ctx = new (window.AudioContext || window.webkitAudioContext)();
-            this.isMuted = localStorage.getItem('portfolio_muted') === 'true';
+            this.ctx = null;
+            // Default to muted on first visit to prevent autoplay policy warnings
+            const storedState = localStorage.getItem('portfolio_muted');
+            this.isMuted = storedState === null ? true : (storedState === 'true');
             this.initialized = false;
             
             // Respect prefers-reduced-motion / accessibility
@@ -136,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         init() {
             if (this.initialized) return;
+            this.ctx = new (window.AudioContext || window.webkitAudioContext)();
             // Resume context if suspended (browser policy)
             if (this.ctx.state === 'suspended') {
                 this.ctx.resume();

@@ -436,6 +436,55 @@ img {
 /* ==========================================================================
    Projects Section
    ========================================================================== */
+.featured-projects-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 90%;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 2rem;
+    -webkit-overflow-scrolling: touch;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.featured-projects-container::-webkit-scrollbar {
+    height: 6px;
+}
+.featured-projects-container::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+    border-radius: 10px;
+}
+.featured-projects-container::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.4);
+    border-radius: 10px;
+}
+
+.featured-projects-container > .featured-project-card {
+    scroll-snap-align: center;
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .featured-projects-container {
+        display: block;
+        overflow-x: visible;
+        padding-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .featured-projects-container > .featured-project-card {
+        margin-bottom: 4rem;
+        scroll-snap-align: none;
+    }
+}
+
 .featured-project-card {
     background-color: white;
     border-radius: 1.5rem;

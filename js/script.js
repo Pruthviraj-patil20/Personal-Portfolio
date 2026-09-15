@@ -126,9 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
     class SoundManager {
         constructor() {
             this.ctx = null;
-            // Default to muted on first visit to prevent autoplay policy warnings
-            const storedState = localStorage.getItem('portfolio_muted');
-            this.isMuted = storedState === null ? true : (storedState === 'true');
+            // Always default to muted on page load to prevent autoplay policy warnings.
+            // (Browsers block AudioContext on fresh loads regardless of localStorage).
+            this.isMuted = true;
             this.initialized = false;
             
             // Respect prefers-reduced-motion / accessibility
